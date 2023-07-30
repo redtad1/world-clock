@@ -23,7 +23,20 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+  //south
+  let southElement = document.querySelector("#south");
+  if (southElement) {
+    let southDateElement = southElement.querySelector(".date");
+    let southTimeElement = southElement.querySelector(".time");
+    let southTime = moment().tz("Africa/Johannesburg");
+
+    southDateElement.innerHTML = moment().format("MMMM Do YYYY");
+    southTimeElement.innerHTML = southTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
+
 function updateCity(event) {
   let cityTimeZone = event.target.value;
   if (cityTimeZone === "current") {
